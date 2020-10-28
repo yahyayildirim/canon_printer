@@ -5,13 +5,13 @@
 LOGIN_USER=$(logname)
 [ -z "$LOGIN_USER" ] && LOGIN_USER=$(who | head -1 | awk '{print $1}')
 
-echo 'Killing captstatusui'
+echo 'captstatusui sonlandırılıyor'
 killall captstatusui 2> /dev/null
-echo 'Stopping ccpd'
+echo 'ccpd durduruluyor'
 service ccpd stop
-echo 'Restarting cups and ccpd'
+echo 'cups ve ccpd yeniden başlatılıyor'
 service cups restart
-echo 'Launching captstatusui'
+echo 'captstatusui başlatılıyor'
 while true
 do
 	sleep 1
@@ -23,8 +23,8 @@ do
 	fi
 done
 echo
-echo 'If the printer still does not work, reboot the computer'
-echo 'Press any key to exit'
+echo 'Yazıcınız halen çalışmıyorsa, bilgisayarı yeniden başlatmayı deneyin'
+echo 'Çıkmak için herhangi bir tuşa basın'
 echo -ne "Automatically exit in    second(s)\e[12D"
 sec=30
 while [ $sec -ne 0 ]
