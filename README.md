@@ -2,9 +2,9 @@
 Canon LBP Yazıcılar için Linux CAPT Yazıcı Sürücülerini yüklemek için Bash Shell Script ile yazılmış yükleme betiği (32-bit ve 64-bit)
 ### Kurulum
 ```
-wget https://github.com/hieplpvip/canon_printer/raw/master/canon_lbp_setup.sh
-chmod +x canon_lbp_setup.sh
-./canon_lbp_setup.sh
+wget https://raw.githubusercontent.com/yahyayildirim/canon_printer/master/Canon_LBP.sh
+chmod +x Canon_LBP.sh
+./Canon_LBP.sh
 ```
 ### Notlar
 Kurulumdan sonra, Masaüstünüzde bir kısayol olacaktır. Yazıcınızın durumunu kontrol etmek için çalıştırın (Eğer "Ready to Print" görünüyorsa, yazıcı kullanıma hazırdır.)
