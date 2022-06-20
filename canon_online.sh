@@ -27,14 +27,14 @@ DRIVER_VERSION='2.71-1'
 DRIVER_VERSION_COMMON='3.21-1'
 
 #Links to driver packages / Sürücü dosyası linkleri
-declare -A URL_DRIVER=([amd64_common]='https://github.com/hieplpvip/canon_printer/raw/master/Packages/cndrvcups-common_3.21-1_amd64.deb' \
-[amd64_capt]='https://github.com/hieplpvip/canon_printer/raw/master/Packages/cndrvcups-capt_2.71-1_amd64.deb' \
-[i386_common]='https://github.com/hieplpvip/canon_printer/raw/master/Packages/cndrvcups-common_3.21-1_i386.deb' \
-[i386_capt]='https://github.com/hieplpvip/canon_printer/raw/master/Packages/cndrvcups-capt_2.71-1_i386.deb')
+declare -A URL_DRIVER=([amd64_common]='https://gitlab.com/yahyayildirim/canon_printer/-/raw/main/src/cndrvcups-common_3.21-1_amd64.deb' \
+[amd64_capt]='https://gitlab.com/yahyayildirim/canon_printer/-/raw/main/src/cndrvcups-capt_2.71-1_amd64.deb' \
+[i386_common]='https://gitlab.com/yahyayildirim/canon_printer/-/raw/main/src/cndrvcups-common_3.21-1_i386.deb' \
+[i386_capt]='https://gitlab.com/yahyayildirim/canon_printer/-/raw/main/src/cndrvcups-capt_2.71-1_i386.deb')
 
 #Links to autoshutdowntool 
-declare -A URL_ASDT=([amd64]='https://github.com/hieplpvip/canon_printer/raw/master/Packages/autoshutdowntool_1.00-1_amd64_deb.tar.gz' \
-[i386]='https://github.com/hieplpvip/canon_printer/raw/master/Packages/autoshutdowntool_1.00-1_i386_deb.tar.gz')
+declare -A URL_ASDT=([amd64]='https://gitlab.com/yahyayildirim/canon_printer/-/raw/main/src/autoshutdowntool_1.00-1_amd64_deb.tar.gz' \
+[i386]='https://gitlab.com/yahyayildirim/canon_printer/-/raw/main/src/autoshutdowntool_1.00-1_i386_deb.tar.gz')
 
 
 #ppd files and printer models mapping / ppd dosyaları ve yazıcı modelleri
@@ -191,11 +191,11 @@ Yazıcınız bilgisayara nasıl bağlanmış durumda: '
 	COMMON_FILE=cndrvcups-common_${DRIVER_VERSION_COMMON}_${ARCH}.deb
 	CAPT_FILE=cndrvcups-capt_${DRIVER_VERSION}_${ARCH}.deb
 	if [ ! -f $COMMON_FILE ]; then
-		sudo -u $LOGIN_USER wget -c -O $COMMON_FILE ${URL_DRIVER[${ARCH}_common]} --show-progress
+		sudo -u $LOGIN_USER wget -c -O $COMMON_FILE ${URL_DRIVER[${ARCH}_common]} --show-progress --no-check-certificate
 		check_error WGET $? $COMMON_FILE
 	fi
 	if [ ! -f $CAPT_FILE ]; then
-		sudo -u $LOGIN_USER wget -c -O $CAPT_FILE ${URL_DRIVER[${ARCH}_capt]} --show-progress
+		sudo -u $LOGIN_USER wget -c -O $CAPT_FILE ${URL_DRIVER[${ARCH}_capt]} --show-progress --no-check-certificate
 		check_error WGET $? $CAPT_FILE
 	fi
 	dpkg --add-architecture i386
