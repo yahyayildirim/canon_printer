@@ -2,7 +2,10 @@
 
 [ $USER != 'root' ] && exec sudo "$0"
 
-LOGIN_USER=$(logname)
+#Current user / Şu anki kullanıcı
+USER_HOME=$(dirname $XAUTHORITY)
+LOGIN_USER=$(echo $USER_HOME | sed 's|.*/||')
+
 [ -z "$LOGIN_USER" ] && LOGIN_USER=$(who | head -1 | awk '{print $1}')
 
 echo 'captstatusui sonlandırılıyor.'
