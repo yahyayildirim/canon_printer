@@ -20,7 +20,7 @@ LOGIN_USER=$(echo $USER_HOME | sed 's|.*/||')
 [ -z "$LOGIN_USER" ] && LOGIN_USER=$(who | head -1 | awk '{print $1}')
 
 #Load the file containing the path to the desktop / Masaüstünde oluşturulacak kısayol değişkeni
-XDG_DESKTOP_DIR="$USER_HOME/.local/share/applications/"
+XDG_DESKTOP_DIR="$USER_HOME/.local/share/applications"
 
 #Driver version / Sürücü versiyonu
 DRIVER_VERSION='2.71-1'
@@ -319,7 +319,7 @@ Terminal=false
 Type=Application
 Icon=/usr/share/icons/pardus/48x48/devices/printer.svg" > "${XDG_DESKTOP_DIR}/$NAMEPRINTER.desktop"
 		chmod 775 "${XDG_DESKTOP_DIR}/$NAMEPRINTER.desktop"
-		chown $LOGIN_USER:$LOGIN_USER "${XDG_DESKTOP_DIR}/$NAMEPRINTER.desktop"
+		chown $LOGIN_USER:"$(id -ng $LOGIN_USER)" "${XDG_DESKTOP_DIR}/$NAMEPRINTER.desktop"
 		#Install autoshutdowntool for supported models
 		if [[ "${!ASDT_SUPPORTED_MODELS[@]}" =~ "$NAMEPRINTER" ]]; then
 			SERIALRANGE=(${ASDT_SUPPORTED_MODELS[$NAMEPRINTER]})
