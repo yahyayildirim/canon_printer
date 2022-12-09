@@ -27,14 +27,14 @@ DRIVER_VERSION='2.71-1'
 DRIVER_VERSION_COMMON='3.21-1'
 
 #Links to driver packages / Sürücü dosyası linkleri
-declare -A URL_DRIVER=([amd64_common]='./cndrvcups-common_3.21-1_amd64.deb' \
-[amd64_capt]='./cndrvcups-capt_2.71-1_amd64.deb' \
-[i386_common]='./cndrvcups-common_3.21-1_i386.deb' \
-[i386_capt]='./cndrvcups-capt_2.71-1_i386.deb')
+declare -A URL_DRIVER=([amd64_common]='./src/cndrvcups-common_3.21-1_amd64.deb' \
+[amd64_capt]='./src/cndrvcups-capt_2.71-1_amd64.deb' \
+[i386_common]='./src/cndrvcups-common_3.21-1_i386.deb' \
+[i386_capt]='./src/cndrvcups-capt_2.71-1_i386.deb')
 
 #Links to autoshutdowntool
-declare -A URL_ASDT=([amd64]='./autoshutdowntool_1.00-1_amd64_deb.tar.gz' \
-[i386]='./autoshutdowntool_1.00-1_i386_deb.tar.gz')
+declare -A URL_ASDT=([amd64]='./src/autoshutdowntool_1.00-1_amd64_deb.tar.gz' \
+[i386]='./src/autoshutdowntool_1.00-1_i386_deb.tar.gz')
 
 #ppd files and printer models mapping
 declare -A LASERSHOT=([LBP-810]=1120 [LBP1120]=1120 [LBP1210]=1210 \
