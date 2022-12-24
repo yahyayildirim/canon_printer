@@ -11,7 +11,6 @@ Canon LBP Yazıcılar için Linux CAPT Yazıcı Sürücülerini yüklemek için 
 * 2- `cd canon_printer`
 * 3- `sudo bash Canon_LBP.sh`
 
-
 ### Desteklenen Modeller
 - LBP-810
 - LBP1120
